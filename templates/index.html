@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Exécution de commandes Shell</title>
+    <title>Execute Shell commands</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,13 +33,13 @@
     </style>
 </head>
 <body>
-    <h1>Exécution de commandes Shell</h1>
+    <h1>Execute Shell commands</h1>
     <div class="warning">
-        <strong>Note:</strong> Seules certaines commandes sont autorisées pour des raisons de sécurité.
-        Commandes autorisées : ls, pwd, echo, date
+        <strong>Note:</strong> Only few commands are allowed for security reasons.<br>
+        Allowed commands : <b>ls, pwd, echo, date and du</b>
     </div>
-    <textarea id="commandInput" rows="3" placeholder="Entrez votre commande shell ici (ex: ls -la)"></textarea>
-    <button onclick="executeCommand()">Exécuter</button>
+    <textarea id="commandInput" rows="3" placeholder="Enter your shell command here (ex: ls -alt, or du -a .)"></textarea>
+    <button onclick="executeCommand()">Execute</button>
     <div id="output"></div>
 
     <script>
@@ -49,7 +49,7 @@
             const command = commandInput.value.trim();
             
             if (!command) {
-                outputDiv.innerHTML = '<span class="error">Veuillez entrer une commande</span>';
+                outputDiv.innerHTML = '<span class="error">Enter a command</span>';
                 return;
             }
 
@@ -71,7 +71,7 @@
                 }
             } catch (error) {
                 console.error('Error:', error);
-                outputDiv.innerHTML = `<span class="error">Erreur de connexion: ${error.message}</span>`;
+                outputDiv.innerHTML = `<span class="error">Connexion error: ${error.message}</span>`;
             }
         }
     </script>
